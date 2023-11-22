@@ -40,22 +40,22 @@ and administrative functions, Health Connect empowers healthcare providers and a
 Installing Django
 `pip install django`
 ### Step 2
-Installing Django crispy forms
+Installing Django crispy forms  
 `pip install django-crispy-forms`
 ### Step 3
-Installing crispy bootstrap4
+Installing crispy bootstrap4  
 `pip install crispy_bootstrap4`
 ### Step 4
-Installing Psycopg (PostgreSQL adapter for Python)
+Installing Psycopg (PostgreSQL adapter for Python)  
 `pip install psycopg`
 ### Step 5
-Installing Psycopg (PostgreSQL adapter for Python) and setting it up with Django
-`python manage.py makemigrations`
+Installing Psycopg (PostgreSQL adapter for Python) and setting it up with Django  
+`python manage.py makemigrations`  
 `python manage.py migrate`
 
 
 ## Usage
-Running the Website
+Running the Website  
 
 `python manage.py runserver`
 
@@ -73,5 +73,5 @@ Created by:
 - ilyaskotbi02@gmail.com
 - aminekebir17@gmail.com  
 - hichamzamranismb@gmail.com
-- mazianewassim@gmail.com
+- mazianewassim@gmail.com  
 Feel free to contact us!
