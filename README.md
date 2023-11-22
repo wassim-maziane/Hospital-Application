@@ -1,11 +1,12 @@
 # Health Connect
 > Manage the entire infrastructure of a hospital with one application
 
+![logo](./static/images/medlogo.png)
+
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
 * [Features](#features)
-* [Screenshots](#screenshots)
 * [Setup](#setup)
 * [Usage](#usage)
 * [Project Status](#project-status)
@@ -26,7 +27,6 @@ and administrative functions, Health Connect empowers healthcare providers and a
 
 
 ## Features
-List the ready features here:
 - Patient Database and Login
 - Patient Medical History  
 - Prescription Management
@@ -35,11 +35,6 @@ List the ready features here:
 - Invoicing
 - Doctor Database and Login
 - Receptionist Database and Login
-
-
-## Screenshots
-![logo](./static/images/medlogo.png)
-
 
 ## Setup
 ### Step 1
