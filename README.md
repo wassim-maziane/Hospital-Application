@@ -11,7 +11,6 @@
 * [Usage](#usage)
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
-* [Acknowledgements](#acknowledgements)
 * [Contact](#contact)
 
 
@@ -70,5 +69,9 @@ Project is: _in progress_ .
 - Adding an HR role
 
 ## Contact
-Created by [@inptTeam](https://www.github.com/wassim-maziane/) - feel free to contact me!
-
+Created by:
+- ilyaskotbi02@gmail.com
+- aminekebir17@gmail.com  
+- hichamzamranismb@gmail.com
+- mazianewassim@gmail.com
+Feel free to contact us!
