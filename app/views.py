@@ -71,21 +71,6 @@ def profile(request, id=None):
                 p_form.save()
                 return redirect('profile')
         return render(request, 'profile.html', {'u_form': u_form, 'p_form': p_form})
-    elif request.user.user_type == 3:
-        doctor = Doctor.objects.filter(id=id).first()
-        user = doctor.person
-        u_form = UserUpdationForm(instance=doctor.person)
-        p_form = UpdateDoctorForm(instance=doctor)
-        if request.method == 'POST':
-            u_form = UserUpdationForm(request.POST)
-            p_form = PatientForm(request.POST)
-            if u_form.is_valid():
-                u_form = UserUpdationForm(request.POST, instance=doctor.person)
-                p_form = UpdateDoctorForm(request.POST, instance=doctor)
-                u_form.save()
-                p_form.save()
-                return redirect('dashboard')
-        return render(request, 'profile.html', {'u_form': u_form, 'p_form': p_form})
     elif request.user.user_type == 4:
         patient = Patient.objects.filter(id=id).first()
         u_form = UserUpdationForm(instance=patient.person)
@@ -122,7 +107,7 @@ def create_prescription(request):
 
 @login_required(login_url='login')
 def create_invoice(request):
-    if request.user.user_type == 3:
+    if request.user.user_type == 4:
         form = InvoiceForm()
         if request.method == 'POST':
             form = InvoiceForm(request.POST)
@@ -174,11 +159,7 @@ def account(request):
 
 @login_required(login_url='login')
 def delete(request, id):
-    if request.user.user_type == 3:
-        doctor = Doctor.objects.filter(id=id).first()
-        doctor.person.delete()
-        return redirect('dashboard')
-    elif request.user.user_type == 4:
+    if request.user.user_type == 4:
         doctor = Patient.objects.filter(id=id).first()
         doctor.person.delete()
         return redirect('dashboard')
@@ -193,17 +174,8 @@ def delete_confirm(request, id):
 
 
 def dashboard(request):
-    if request.user.user_type == 3:
-        doctors = Doctor.objects.all()
-        active = Doctor.objects.filter(status=1).count()
-        patients = Patient.objects.all().count()
-        context = {
-            'doctors': doctors,
-            'active': active,
-            'patients': patients,
-        }
-    elif request.user.user_type == 4:
-        appointments = Appointment.objects.all()
+    if request.user.user_type == 4:
+        pending_appointments = Appointment.objects.filter(status=Appointment.Pending)
         patients = Patient.objects.all()
         doctors = Doctor.objects.all() 
         approved = Appointment.objects.filter(status='AP').count()
@@ -212,31 +184,14 @@ def dashboard(request):
             'patients': patients,
             'doctors': doctors,
             'approved': approved,
+            'appointments': pending_appointments,
+
         }
     return render(request, 'dashboard.html', context)
 
-
 @login_required(login_url='login')
 def create(request):
-    if request.user.user_type == 3:
-        u_form = UserUpdationForm()
-        p_form = UpdateDoctorForm()
-        if request.method == 'POST':
-            u_form = UserUpdationForm(request.POST)
-            p_form = UpdateDoctorForm(request.POST)
-            if u_form.is_valid():
-                user = u_form.save(commit=False)
-                instance = p_form.save(commit=False)
-                user.username = user.first_name.lower()+"_"+user.last_name.lower()
-                user.user_type = 2
-                user.set_password("Samidha123")
-                instance.person = user
-                user.save()
-                instance.save()
-                return redirect('dashboard')
-        return render(request, 'profile.html', {'u_form': u_form, 'p_form': p_form})
-
-    elif request.user.user_type == 4:
+    if request.user.user_type == 4:
         u_form = UserUpdationForm()
         p_form = PatientForm()
         if request.method == 'POST':
@@ -247,7 +202,7 @@ def create(request):
                 instance = p_form.save(commit=False)
                 user.username = user.first_name.lower()+"_"+user.last_name.lower()
                 user.user_type = 2
-                user.set_password("Samidha123")
+                user.set_password("user")
                 instance.person = user
                 user.save()
                 instance.save()
@@ -294,3 +249,17 @@ def delete_prescription(request, id):
         return redirect('prescription') 
     else:
         return redirect('')
+    
+@login_required
+def delete_invoice(request, id):
+    invoice = get_object_or_404(Invoice, id=id)
+    invoice.delete()
+    return redirect('account')
+
+@login_required
+def approve_appointment(request, id):
+    appointment = get_object_or_404(Appointment, id=id)
+    if appointment.status == Appointment.Pending:
+        appointment.status = Appointment.Approved
+        appointment.save()
+    return redirect('dashboard')

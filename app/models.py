@@ -107,8 +107,6 @@ class Prescription(models.Model):
     Symptoms = models.CharField(max_length=100)
     Description = models.TextField()
 
-# class Invoice
-
 
 class Invoice(models.Model):
     patient = models.ForeignKey(Patient, null=True, on_delete=models.CASCADE)

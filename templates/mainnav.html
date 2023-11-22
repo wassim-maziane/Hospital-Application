@@ -10,7 +10,7 @@
       <a class="nav-link" href="{% url 'index' %}">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{% url 'about' %}">About Us</a>
+      <a class="nav-link" href="{% url 'about' %}">About</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="{% url 'contact' %}">Contact</a>
@@ -27,28 +27,25 @@
     </li>
     {% elif user.user_type is 2 %}
     <li class="nav-item">
-      <a class="nav-link" href="{% url 'appointments' %}">Your Appointment's</a>
+      <a class="nav-link" href="{% url 'appointments' %}">Appointments</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{% url 'invoice' %}">Invoice & Payments</a>
+      <a class="nav-link" href="{% url 'invoice' %}">Payments</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="{% url 'profile' %}">Profile</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{% url 'prescription' %}">Medical History</a>
-    </li>
-    {% elif user.user_type is 3 %}
-    <li class="nav-item">
-      <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{% url 'account' %}">Accounting</a>
+      <a class="nav-link" href="{% url 'prescription' %}">History</a>
     </li>
     {% elif user.user_type is 4 %}
     <li class="nav-item">
           <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
         </li>
+    <li class="nav-item">
+          <a class="nav-link" href="{% url 'account' %}">Accounting</a>
+        </li>
+    
     {% endif %}
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">

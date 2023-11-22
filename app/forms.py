@@ -69,12 +69,12 @@ class UpdateDoctorForm(forms.ModelForm):
 class AppointmentForm(forms.ModelForm):
     class Meta:
         model = Appointment
-        fields = ['doctor', 'date','time', 'patient']
+        fields = ['doctor', 'date','time', 'patient', 'status']
         widgets = {
             'date': forms.DateInput(attrs={'type': 'date'}),
             'time': forms.TimeInput(attrs={'type': 'time'}),
         }
-
+        status = forms.ChoiceField(choices=Appointment.STATUS, required=True)
 class PrescriptionForm(forms.ModelForm):
     Description = forms.CharField(label=_("Prescription"),)
     Symptoms = forms.CharField(label=_("Disease"),)

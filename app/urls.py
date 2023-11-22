@@ -25,5 +25,6 @@ urlpatterns = [
     path('create_invoice', views.create_invoice, name='create_invoice'),
     path('delete_appointment/<int:id>/', views.delete_appointment, name='delete_appointment'),
     path('delete_prescription/<int:id>/', views.delete_prescription, name='delete_prescription'),
-
+    path('appointment/approve/<int:id>/', views.approve_appointment, name='approve_appointment'),
+    path('invoice/delete/<int:id>/', views.delete_invoice, name='delete_invoice'),
 ]
