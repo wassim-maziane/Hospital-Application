@@ -70,5 +70,5 @@ Project is: _in progress_ .
 - Adding an HR role
 
 ## Contact
-Created by [@wassiml](https://www.github.com/wassim-maziane/) - feel free to contact me!
+Created by [@inptTeam](https://www.github.com/wassim-maziane/) - feel free to contact me!
 
