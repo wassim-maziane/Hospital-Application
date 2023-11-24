@@ -1,8 +1,8 @@
 {% load static %}
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
+    {% include "mainnav.html" %} 
     {% block style %} {% endblock style %}
     {% block title %} <title> Health Connect </title> {% endblock title %}
     <meta charset="utf-8" />
@@ -27,6 +27,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   </head>
   <body>
-    {% include "mainnav.html" %} {% block body %} {% endblock body %}
+  {% block body %}  {% endblock body %}
   </body>
 </html>

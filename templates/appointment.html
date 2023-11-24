@@ -3,7 +3,16 @@
 <title> Appointment</title>
 {% endblock title %}
 <!-- body start -->
-{% block body %} {% if user.user_type is 2 %}
+{% block body %} 
+<style>
+  body {
+  background-image: url('alo');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+  </style>
+  {% if user.user_type is 2 %}
 <div class="container mt-30">
   <table class="table table-striped table-bordered">
     <thead>

@@ -3,7 +3,16 @@
 <title> Prescription</title>
 {% endblock title %}
 <!-- body start -->
-{% block body %} {% if prescriptions %} {% if user.user_type is 1 %} 
+{% block body %}
+<style>
+  body {
+  background-image: url('alo');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+  </style>
+ {% if prescriptions %} {% if user.user_type is 1 %} 
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <button type="button" class="btn btn-outline-primary pres-btn">

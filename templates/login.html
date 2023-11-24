@@ -3,7 +3,17 @@
 <title> Login</title>
 {% endblock title %}
  {% block body %}
-<div class="container">
+ <style>
+  body {
+  background-image: url('/static/images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+  </style>
+  <br>
+<div class="container" style="min-height: 80vh;">
   <div class="content-section">
     <form method="POST">
       {% csrf_token %}
