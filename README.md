@@ -48,17 +48,17 @@ Installing crispy bootstrap4
 ### Step 4
 Installing Psycopg (PostgreSQL adapter for Python)  
 `pip install psycopg`
-Add these lines in settings.py file:
-  DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'telemedecine',
-        'USER': 'postgres',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
-        'PORT': '5432'
-    }
-}  
+Add these lines in settings.py file:  
+  DATABASES = {  
+    'default': {  
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',  
+        'NAME': 'telemedecine',  
+        'USER': 'postgres',  
+        'PASSWORD': 'root',  
+        'HOST': 'localhost',  
+        'PORT': '5432'  
+    }  
+}   
 
 ### Step 5
 Installing Psycopg (PostgreSQL adapter for Python) and setting it up with Django  
