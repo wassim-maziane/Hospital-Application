@@ -17,9 +17,7 @@
     <section class="bg-info text-center rounded-top">
       <div class="container">
         <h5 style="margin-bottom: 0px;">
-          {% if user.user_type is 3 %} Total Doctor
-          <!-- aiosdn -->
-          {% elif user.user_type is 4 %} Upcoming Appointments {% endif %}
+          {% if user.user_type is 4 %} Upcoming Appointments {% endif %}
         </h5>
       </div>
       <!-- /.container-->
@@ -27,9 +25,7 @@
 
     <section class="bg-primary text-center rounded-bottom">
       <div class="container h2">
-        {% if user.user_type is 3 %} {{ doctors.count }}
-        <!-- aiusdfnsa -->
-        {% elif user.user_type is 4 %} {{ appointments.count }} {% endif %}
+        {% if user.user_type is 4 %} {{ appointments.count }} {% endif %}
       </div>
     </section>
   </div>
@@ -37,9 +33,7 @@
     <section class="bg-info text-center rounded-top">
       <div class="container">
         <h5 style="margin-bottom: 0px;">
-          {% if user.user_type is 3 %} Total Patient
-          <!-- aishfd -->
-          {% elif user.user_type is 4 %} Appointments Done {% endif %}
+          {% if user.user_type is 4 %} Appointments Done {% endif %}
         </h5>
       </div>
       <!-- /.container-->
@@ -47,9 +41,7 @@
 
     <section class="bg-primary text-center rounded-bottom">
       <div class="container h2">
-        {% if user.user_type is 3 %} {{ patients }}
-        <!-- asfb -->
-        {% elif user.user_type is 4 %} {{ approved }} {% endif %}
+        {% if user.user_type is 4 %} {{ approved }} {% endif %}
       </div>
     </section>
   </div>
@@ -57,18 +49,14 @@
     <section class="bg-info text-center rounded-top">
       <div class="container">
         <h5 style="margin-bottom: 0px;">
-          {% if user.user_type is 3 %} On Duty Doctors
-          <!-- haisdfh -->
-          {% elif user.user_type is 4 %} Total Appointments
-          <!-- endif -->
+          {% if user.user_type is 4 %} Total Appointments
           {% endif %}
         </h5>
       </div>
-      <!-- /.container-->
     </section>
     <section class="bg-primary text-center rounded-bottom">
       <div class="container h2">
-        {% if user.user_type is 3 %} {{ active }} {% elif user.user_type is 4 %}
+        {% if user.user_type is 4 %}
         {{ appointments.count|add:approved }}
         {% endif %}
       </div>
